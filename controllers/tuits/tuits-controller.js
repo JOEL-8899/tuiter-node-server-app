@@ -7,11 +7,13 @@ const createTuit = (req, res) => {
     newTuit._id = (new Date()).getTime()+'';
     newTuit.likes = 0;
     newTuit.liked = false;
+    newTuit.disliked = false;
     newTuit.image = "https://tinyurl.com/mtbcfddy";
     newTuit.replies = 0;
     newTuit.retuits = 0;
     newTuit.repost=0;
     newTuit.handle = "@newTuit";
+    newTuit.dislikes = 0;
     tuits.push(newTuit);
     res.json(newTuit);
 }
