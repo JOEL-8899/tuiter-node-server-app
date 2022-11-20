@@ -9,11 +9,9 @@ const createTuit = (req, res) => {
     newTuit.liked = false;
     tuits.push(newTuit);
     res.json(newTuit);
-
 }
 const findTuits  = (req, res) => {
     res.json(tuits);
-
 }
 const updateTuit = (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
