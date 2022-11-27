@@ -4,19 +4,10 @@ import * as tuitsDao from './tuits-dao.js';
 
 const createTuit = async (req, res) => {
     const newTuit = req.body;
-    newTuit._id = (new Date()).getTime()+'';
     newTuit.likes = 0;
     newTuit.liked = false;
-    newTuit.disliked = false;
-    newTuit.image = "https://tinyurl.com/mtbcfddy";
-    newTuit.replies = 0;
-    newTuit.retuits = 0;
-    newTuit.repost=0;
-    newTuit.handle = "@newTuit";
-    newTuit.dislikes = 0;
-    // tuits.push(newTuit);
-    const insertedTuit = await tuitsDao
-        .createTuit(newTuit);
+
+    const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
 }
 const findTuits  = async (req, res) => {
@@ -28,11 +19,7 @@ const updateTuit = async (req, res) => {
     const updates = req.body;
     const status = await tuitsDao
         .updateTuit(tuitdIdToUpdate,updates);
-    // const tuitIndex = tuits.findIndex(
-    //     (t) => t._id === tuitdIdToUpdate)
-    // tuits[tuitIndex] =
-    //     {...tuits[tuitIndex], ...updates};
-    // res.sendStatus(200);
+
     res.json(status);
 
 }
