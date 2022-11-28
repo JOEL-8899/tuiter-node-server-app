@@ -7,8 +7,7 @@ import mongoose from "mongoose";
 
 const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
     || 'mongodb://localhost:27017/tuiter';
-mongoose.connect(CONNECTION_STRING);
-
+mongoose.connect('mongodb+srv://mathewpaulj:Mongo12345@cluster0.r4zsa6f.mongodb.net/?retryWrites=true&w=majority');
 const app = express()
 app.use(cors());
 app.use(express.json());
