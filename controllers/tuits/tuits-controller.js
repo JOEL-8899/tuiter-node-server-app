@@ -6,6 +6,13 @@ const createTuit = async (req, res) => {
     const newTuit = req.body;
     newTuit.likes = 0;
     newTuit.liked = false;
+    newTuit.disliked = false;
+    newTuit.image = "https://tinyurl.com/mtbcfddy";
+    newTuit.replies = 0;
+    newTuit.retuits = 0;
+    newTuit.repost=0;
+    newTuit.handle = "@newTuit";
+    newTuit.dislikes = 0;
 
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);
